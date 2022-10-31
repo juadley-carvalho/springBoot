@@ -38,6 +38,11 @@ public class UserController {
         return repository.findByName(name);
     }
 
+    @GetMapping(value = "/email")
+    public List<User> findByEmail(@RequestParam String email){
+        return repository.findByEmail(email);
+    }
+
     @PostMapping
     public User insert(@RequestBody User user){
         User result = repository.save(user);
